@@ -1,17 +1,17 @@
 const RegisterController = {
-    register: async() => {
 
-        const nome = document.getElementById("nome");
-        const email = document.getElementById("email");
-        const senha = document.getElementById("senha");
-        const cpf = document.getElementById("cpf");
-        const telefone = document.getElementById("telefone");
+    register: async() => {
+        const name = document.getElementById("nome").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("senha").value;
+        const cpf = document.getElementById("cpf").value;
+        const phoneNumber = document.getElementById("telefone").value;
         const user = {
-            name: nome.value ,
-            cpf: cpf.value,
-            email: email.value,
-            password: senha.value,
-            phoneNumber: telefone.value
+            name,
+            cpf,
+            email,
+            password,
+            phoneNumber
         }
         console.log(user)
         validarCadastro(user)
@@ -19,6 +19,6 @@ const RegisterController = {
         console.log(response)
         return response
     },
-    
-    update: async () => {}
+
+    update: async() => {}
 }
