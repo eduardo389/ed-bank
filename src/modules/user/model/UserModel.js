@@ -1,7 +1,7 @@
 // const url = "https://edbank-backend.herokuapp.com/v1"
 const url = "http://localhost:3000/v1"
-const RegisterModel = {
-    register: (user) => {
+const UserModel = {
+    create: (user) => {
         const options = {
             method: 'POST',
             headers: {

@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+    edbank-front:
+        image: edbank-front:latest
+        build:
+          context: .
+          dockerfile: ./Dockerfile
+        restart: on-failure
+        ports:
+            - 80:80
+        volumes:
+          - ".:/var/www/html/edbank"
