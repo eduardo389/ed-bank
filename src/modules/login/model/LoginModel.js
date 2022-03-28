@@ -1,7 +1,6 @@
 const url = "https://edbank-backend.herokuapp.com/v1"
-//const url = "http://localhost:3000/v1"
 const RegisterModel = {
-    register: (user) => {
+    login: (user) => {
         const options = {
             method: 'POST',
             headers: {
@@ -14,7 +13,7 @@ const RegisterModel = {
 
         console.log(options)
 
-        return fetch(`${url}/user`, options)
+        return fetch(`${url}/auth/login`, options)
             .then(response => {
                 console.log(response)
                 return response.json()

@@ -1,13 +1,11 @@
 function validarLogin(user){
-    var usuario = document.getElementById("usuario");
-    var senha = document.getElementById("senhaLogin");
-
-    if (usuario.value == "") {
+  
+    if (user.userId == "") {
         alert("Usuário não informado");
         nome.focus();
         return;
       }
-    if (senha.value == "") {
+    if (password.value == "") {
         alert("Senha não informada");
         nome.focus();
         return;
