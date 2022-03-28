@@ -1,5 +1,5 @@
 const url = "https://edbank-backend.herokuapp.com/v1"
-const RegisterModel = {
+const LoginModel = {
     login: (user) => {
         const options = {
             method: 'POST',

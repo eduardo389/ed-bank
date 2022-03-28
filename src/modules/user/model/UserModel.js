@@ -1,5 +1,5 @@
-const url = "https://edbank-backend.herokuapp.com/v1"
-    // const url = "http://localhost:3000/v1"
+// const url = "https://edbank-backend.herokuapp.com/v1"
+const url = "http://localhost:3000/v1"
 const UserModel = {
     create: (user) => {
         const options = {

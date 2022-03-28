@@ -1,18 +1,16 @@
-const RegisterController = {
-    login: async() => {
+const LoginController = {
 
-        const cpf = document.getElementById("cpf");
-        const password = document.getElementById("senhaLogin");
+    login: async() => {
+        const cpf = document.getElementById("cpf").value;
+        const password = document.getElementById("senhaLogin").value;
         const user = {
-            cpf: cpf.value ,
-            password: password.value
+            cpf,
+            password
         }
-        console.log(user)
-        validarLogin(user)
-        const response = await RegisterModel.register(user)
-        console.log(response)
+        validateLogin(user)
+        const response = await LoginModel.login(user)
         return response
     },
-    
-    update: async () => {}
+
+    update: async() => {}
 }
