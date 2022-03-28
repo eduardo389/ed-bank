@@ -1,4 +1,4 @@
-function validarCadastro(user) {
+function validateUserRegister(user) {
     var confirmPassword = document.getElementById("confirmarSenha");
 
     if (user.name == "") {

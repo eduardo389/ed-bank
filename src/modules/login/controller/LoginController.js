@@ -9,6 +9,7 @@ const LoginController = {
         }
         validateLogin(user)
         const response = await LoginModel.login(user)
+        console.log(response)
         return response
     },
 

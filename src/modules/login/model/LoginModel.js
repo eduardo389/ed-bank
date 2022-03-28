@@ -1,4 +1,5 @@
-const url = "https://edbank-backend.herokuapp.com/v1"
+const url = config.edBankApi.url
+
 const LoginModel = {
     login: (user) => {
         const options = {
@@ -11,15 +12,11 @@ const LoginModel = {
             mode: "cors"
         }
 
-        console.log(options)
-
         return fetch(`${url}/auth/login`, options)
             .then(response => {
-                console.log(response)
                 return response.json()
             })
             .catch(error => {
-                console.log(error)
                 return error
             })
 
