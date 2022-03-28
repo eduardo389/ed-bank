@@ -1,6 +1,6 @@
-const RegisterController = {
+const UserController = {
 
-    register: async() => {
+    create: async() => {
         const name = document.getElementById("nome").value;
         const email = document.getElementById("email").value;
         const password = document.getElementById("senha").value;
@@ -13,10 +13,8 @@ const RegisterController = {
             password,
             phoneNumber
         }
-        console.log(user)
-        validarCadastro(user)
-        const response = await RegisterModel.register(user)
-        console.log(response)
+        validateRegister(user)
+        const response = await UserModel.create(user)
         return response
     },
 
