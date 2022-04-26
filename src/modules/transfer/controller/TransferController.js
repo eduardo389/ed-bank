@@ -8,7 +8,7 @@ const TransferController = {
             value
         }
         validateTransfer(transfer)
-        const response = await LoginModel.login(transfer)
+        const response = await TransferModel.Transfer(transfer)
         console.log(response)
         return response
     },
