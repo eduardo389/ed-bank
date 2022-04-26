@@ -1,4 +1,4 @@
-const LoginController = {
+const TransferController = {
 
     Transfer: async() => {
         const account = document.getElementById("account").value;
