@@ -16,6 +16,9 @@ const LoginModel = {
             .then(response => {
                 return response.json()
             })
+            .then(token => {
+                localStorage.setItem('token-jwt', token.jwt)
+            })
             .catch(error => {
                 return error
             })
