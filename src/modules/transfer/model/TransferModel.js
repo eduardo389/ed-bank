@@ -12,7 +12,9 @@ const TransferModel = {
             mode: "cors"
         }
 
-        return fetch(`${url}/account/{id}/transfer`, options)
+        const accountId = localStorage.getItem('currentAccountId')
+
+        return fetch(`${url}/account/${accountId}/transfer`, options)
             .then(response => {
                 return response.json()
             })

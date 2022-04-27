@@ -20,26 +20,5 @@ const UserModel = {
             .catch(error => {
                 return error
             })
-
-    },
-    get: () => {
-        const options = {
-            method: 'GET',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                'Authorization': localStorage.getItem('jwt-token')
-            },
-            mode: "cors"
-        }
-
-        return fetch(`${url}/user`, options)
-            .then(response => {
-                return response.json()
-            })
-            .catch(error => {
-                return error
-            })
-
     }
 }

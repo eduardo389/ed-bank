@@ -16,8 +16,28 @@ const LoginModel = {
             .then(response => {
                 return response.json()
             })
-            .then(token => {
-                localStorage.setItem('token-jwt', token.jwt)
+            .then(response => {
+                localStorage.setItem('token-jwt', response.token)
+            })
+            .catch(error => {
+                return error
+            })
+
+    },
+    get: () => {
+        const options = {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'authorization': `Bearer ${localStorage.getItem('jwt-token')}`
+            },
+            mode: "cors"
+        }
+
+        return fetch(`${url}/user`, options)
+            .then(response => {
+                return response.json()
             })
             .catch(error => {
                 return error
