@@ -25,7 +25,7 @@ const UserModel = {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${localStorage.getItem('token-jwt')}`
+                'Authorization': `Bearer ${atob(localStorage.getItem('token-jwt'))}`
             },
             mode: "cors"
         }

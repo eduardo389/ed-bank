@@ -8,15 +8,15 @@ const LoginController = {
             password
         }
         validateLogin(userData)
+        localStorage.clear();
         const response = await LoginModel.login(userData)
 
         const user = await UserModel.get()
 
-        localStorage.setItem('currentAccountId', user.accounts[0].id)
-
         User.setName(user.name)
+        User.setAccountId(user.accounts[0].id)
         User.setAccountNumber(user.accounts[0].number)
-        User.setBalance(user.accounts[0].number)
+        User.setBalance(user.accounts[0].balance)
 
         return response
     },
