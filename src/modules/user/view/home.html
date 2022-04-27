@@ -23,6 +23,10 @@
                 document.getElementById(divid).style.display = "none";
             }
         }
+
+        if (!localStorage.getItem('token-jwt')) {
+            window.location.pathname = 'src/modules/login/view/login.html'
+        }
     </script>
 
 </head>
