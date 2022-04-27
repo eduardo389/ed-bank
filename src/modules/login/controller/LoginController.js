@@ -17,6 +17,9 @@ const LoginController = {
         User.setAccountId(user.accounts[0].id)
         User.setAccountNumber(user.accounts[0].number)
         User.setBalance(user.accounts[0].balance)
+        User.setEmail(user.email)
+
+        window.location.pathname = "src/modules/user/view/home.html"
 
         return response
     },

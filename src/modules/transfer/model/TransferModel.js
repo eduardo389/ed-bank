@@ -13,7 +13,7 @@ const TransferModel = {
             mode: "cors"
         }
 
-        const accountId = localStorage.getItem('currentAccountId')
+        const accountId = atob(localStorage.getItem('userAccountId'))
 
         return fetch(`${url}/account/${accountId}/transfer`, options)
             .then(response => {

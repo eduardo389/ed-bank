@@ -3,7 +3,7 @@ const url = config.edBankApi.url
 const DepositModel = {
     Deposit: (deposit) => {
         const options = {
-            method: 'POST',
+            method: 'PATCH',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
@@ -13,7 +13,7 @@ const DepositModel = {
             mode: "cors"
         }
 
-        const accountId = localStorage.getItem('currentAccountId')
+        const accountId = atob(localStorage.getItem('userAccountId'))
 
         return fetch(`${url}/account/${accountId}/deposit`, options)
             .then(response => {

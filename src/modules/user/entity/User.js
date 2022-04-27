@@ -1,5 +1,6 @@
 const User = {
     name: '',
+    email: '',
     account: {
         id: 0,
         number: '',
@@ -32,5 +33,12 @@ const User = {
     },
     getAccountId: () => {
         return User.account.id
+    },
+    setEmail: (email) => {
+        localStorage.setItem("userEmail", btoa(email))
+        User.email = email
+    },
+    getEmail: () => {
+        return User.email
     },
 }
