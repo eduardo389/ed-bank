@@ -1,5 +1,3 @@
-const url = config.edBankApi.url
-
 const LoginModel = {
     login: (user) => {
         const options = {
@@ -12,7 +10,7 @@ const LoginModel = {
             mode: "cors"
         }
 
-        return fetch(`${url}/auth/login`, options)
+        return fetch(`${config.edBankApi.url}/auth/login`, options)
             .then(response => {
                 return response.json()
             })
@@ -23,25 +21,6 @@ const LoginModel = {
                 return error
             })
 
-    },
-    get: () => {
-        const options = {
-            method: 'GET',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                'authorization': `Bearer ${localStorage.getItem('jwt-token')}`
-            },
-            mode: "cors"
-        }
-
-        return fetch(`${url}/user`, options)
-            .then(response => {
-                return response.json()
-            })
-            .catch(error => {
-                return error
-            })
-
     }
+
 }

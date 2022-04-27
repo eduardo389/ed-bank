@@ -6,7 +6,8 @@ const TransferModel = {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem('token-jwt')}`
             },
             body: JSON.stringify(transfer),
             mode: "cors"

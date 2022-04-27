@@ -16,4 +16,10 @@ const User = {
     getAccountNumber: () => {
         return User.account.number
     },
+    setBalance: (balance) => {
+        User.account.balance = balance
+    },
+    getBalance: () => {
+        return User.account.balance
+    },
 }

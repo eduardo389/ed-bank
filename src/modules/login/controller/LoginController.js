@@ -3,21 +3,21 @@ const LoginController = {
     login: async() => {
         const cpf = document.getElementById("cpf").value;
         const password = document.getElementById("senhaLogin").value;
-        const user = {
+        const userData = {
             cpf,
             password
         }
-        validateLogin(user)
-        const response = await LoginModel.login(user)
+        validateLogin(userData)
+        const response = await LoginModel.login(userData)
 
-        const getUser = await LoginModel.get()
+        const user = await UserModel.get()
 
-        localStorage.setItem('currentAccountId', getUser.accounts[0].id)
+        localStorage.setItem('currentAccountId', user.accounts[0].id)
 
-        User.setName(getUser.name)
-        User.setAccountNumber(getUser.accounts[0].number)
+        User.setName(user.name)
+        User.setAccountNumber(user.accounts[0].number)
+        User.setBalance(user.accounts[0].number)
 
-        console.log(response)
         return response
     },
 

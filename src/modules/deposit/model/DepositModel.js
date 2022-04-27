@@ -7,7 +7,7 @@ const DepositModel = {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
-                'Authorization': localStorage.getItem('jwt-token')
+                'Authorization': `Bearer ${localStorage.getItem('token-jwt')}`
             },
             body: JSON.stringify(deposit),
             mode: "cors"
