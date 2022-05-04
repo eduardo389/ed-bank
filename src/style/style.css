@@ -2805,6 +2805,14 @@ textarea.form-control-lg {
     align-items: stretch;
     width: 100%;
 }
+.grid{
+    display: grid;
+    grid-column-gap: 10px;
+    margin: auto;
+}
+.margin{
+    margin-top: 6px;
+}
 
 .input-group>.form-control,
 .input-group>.form-select {

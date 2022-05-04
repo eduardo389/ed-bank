@@ -6,15 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>BANK - Investimentos & Financiamento</title>
-    <!-- Favicon-->
+    <script type="text/javascript" src="../../extract/validator/ExtractValidator.js"></script>
+    <script type="text/javascript" src="../../extract/controller/ExtractController.js"></script>
+    <script type="text/javascript" src="../../extract/generate/ExtractGenerate.js"></script>
+    <script type="text/javascript" src="../../extract/model/ExtractModel.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js" integrity="sha384-THVO/sM0mFD9h7dfSndI6TS0PgAGavwKvB5hAxRRvc0o9cPLohB0wb/PTA7LdUHs" crossorigin="anonymous"></script>
     <link rel="icon" type="image/x-icon" href="../../../../public/favicon.ico" />
-    <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
-    <!-- Core theme CSS (includes Bootstrap)-->
     <link href="../../../style/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-
+    <title>BANK - Investimentos & Financiamento</title>
     <script>
         function toogleState(divid) {
             if (document.getElementById(divid).style.display === "none") {
@@ -23,20 +24,18 @@
                 document.getElementById(divid).style.display = "none";
             }
         }
-
-        if (!localStorage.getItem('token-jwt')) {
-            window.location.pathname = 'src/modules/login/view/login.html'
-        }
     </script>
-
 </head>
 
 <body>
     <!-- Responsive navbar-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm" style="background: -webkit-linear-gradient(#2937f0, #9f1ae2)">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm"
+        style="background: -webkit-linear-gradient(#2937f0, #9f1ae2)">
         <div class="container px-5">
             <a class="navbar-brand" href="#!">ED BANK - Investimentos & Financiamento</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse dropdown show" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
@@ -44,7 +43,8 @@
                     <li class="nav-item"><a class="nav-link" href="#!"><i class="bi bi-gear"></i> Configurações</a></li>
                     <li class="nav-item">
 
-                        <a class="nav-link" href="../../login/view/login.html" onclick="localStorage.clear()"><i class="bi-box-arrow-right"></i> Sair</a>
+                        <a class="nav-link" href="../../login/view/login.html" onclick="localStorage.clear()"><i
+                                class="bi-box-arrow-right"></i> Sair</a>
                     </li>
                 </ul>
             </div>
@@ -59,11 +59,15 @@
                 <div class="col-lg-6">
                     <div id="account-info" class="text-center my-5">
                         <h1 id="owner-account-name" class="display-4 fw-bolder text-white mb-1"></h1><br>
-                        <p id="account-balance" class="lead text-white-50 mb-4" style="font-size:1.9rem;"><br>Saldo disponível: R$<span id='oculta' style="display: none;">info</span><button type="button" onclick="toogleState('oculta')" style="background-color: #212529; border: none;"><i class="bi bi-eye " style="color: white;"></i></button></i>
+                        <p id="account-balance" class="lead text-white-50 mb-4" style="font-size:1.9rem;"><br>Saldo
+                            disponível: R$<span id='oculta' style="display: none;">info</span><button type="button"
+                                onclick="toogleState('oculta')" style="background-color: #212529; border: none;"><i
+                                    class="bi bi-eye " style="color: white;"></i></button></i>
                         </p>
 
                         <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
-                            <a class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0" onclick="toogleState('66')" href="#66">Ver informações da conta</a>
+                            <a class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0" onclick="toogleState('66')"
+                                href="#66">Ver informações da conta</a>
 
                         </div>
 
@@ -78,31 +82,34 @@
         <div class="container px-5 my-5">
             <div class="row gx-5">
                 <div class="col-lg-4 mb-5 mb-lg-0">
-                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi-wallet2 "></i></div>
+                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi-wallet2 "></i>
+                    </div>
                     <h2 class="h4 fw-bolder">Extrato</h2>
                     <p>Veja a movimentação financeira de sua conta.</p>
-                    <a class="text-decoration-none" href="#!">
-                            Clique aqui
-                            <i class="bi bi-arrow-right "></i>
-                        </a>
+                    <a class="text-decoration-none" href="#myModal" data-bs-toggle="modal">
+                        Clique aqui
+                        <i class="bi bi-arrow-right "></i>
+                    </a>
                 </div>
                 <div class="col-lg-4 mb-5 mb-lg-0">
-                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-safe"></i></div>
+                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-safe"></i>
+                    </div>
                     <h2 class="h4 fw-bolder">Depósito</h2>
                     <p>Adicione dinheiro a seu saldo, podendo investir em diversas opções oferecidas.</p>
                     <a class="text-decoration-none" href="../../deposit/view/deposit.html">
-                            Clique aqui
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
+                        Clique aqui
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
                 </div>
                 <div class="col-lg-4">
-                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi-cash-stack"></i></div>
+                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi-cash-stack"></i>
+                    </div>
                     <h2 class="h4 fw-bolder">Transferência</h2>
                     <p>Pague suas contas ou transfira.</p>
                     <a class="text-decoration-none" href="../../transfer/view/transfer.html">
-                            Clique aqui
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
+                        Clique aqui
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -113,7 +120,7 @@
                 <h2 class="text-white" style="font-size: calc(1.625rem + 4.5vw); ">
                     Financiamento estudantil e microcrédito para MEI:
                     <br />
-                    <br/>
+                    <br />
                 </h2>
                 <a class="btn btn-outline-light py-3 px-4 rounded-pill" target="_blank">Saiba mais</a>
             </div>
@@ -134,7 +141,8 @@
                     <div class="card mb-5 mb-xl-0">
                         <div class="card-body p-5">
                             <div class="large text-uppercase fw-bold">
-                                <i class="bi bi-star-fill text-warning"></i>Tesouro Prefixado</div>
+                                <i class="bi bi-star-fill text-warning"></i>Tesouro Prefixado
+                            </div>
                             <div class="mb-3">
                                 <span class="display-5 fw-bold">11,05%</span>
                                 <span class="text-muted">/ a.a.</span>
@@ -142,7 +150,8 @@
                             <ul class="list-unstyled mb-4">
                                 <li class="mb-2">
                                     <i class="bi bi-check text-primary"></i>
-                                    <strong>Porta de entrada do mundo dos investimentos. Possui modalidades prefixadas e pós-fixadas. Ideal para quem quer começar.</strong>
+                                    <strong>Porta de entrada do mundo dos investimentos. Possui modalidades prefixadas e
+                                        pós-fixadas. Ideal para quem quer começar.</strong>
                                 </li>
                                 <li class="mb-2">
                                     <i class="bi bi-check text-primary"></i> Investimento mais seguro do mercado
@@ -170,15 +179,19 @@
                             <ul class="list-unstyled mb-4">
                                 <li class="mb-2">
                                     <i class="bi bi-check text-primary"></i>
-                                    <strong>São investimentos em Renda Fixa com boas rentabilidades e muitas opções de prazo de resgate para sua estratégia de investimento.
+                                    <strong>São investimentos em Renda Fixa com boas rentabilidades e muitas opções de
+                                        prazo de resgate para sua estratégia de investimento.
 
-                                        </strong>
+                                    </strong>
                                 </li>
                                 <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i> Tem cobrança de Imposto de Renda – segue a tabela regressiva da renda fixa, conforme o tempo de aplicação, de 22,5% a 15%, podendo ainda ser mais lucrativo que o LCI ou LCA
+                                    <i class="bi bi-check text-primary"></i> Tem cobrança de Imposto de Renda – segue a
+                                    tabela regressiva da renda fixa, conforme o tempo de aplicação, de 22,5% a 15%,
+                                    podendo ainda ser mais lucrativo que o LCI ou LCA
                                 </li>
                                 <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i> São cobertos pelo Fundo Garantidor de Créditos - FGC
+                                    <i class="bi bi-check text-primary"></i> São cobertos pelo Fundo Garantidor de
+                                    Créditos - FGC
                                 </li>
 
 
@@ -192,7 +205,8 @@
                     <div class="card">
                         <div class="card-body p-5">
                             <div class="large text-uppercase fw-bold">
-                                <i class="bi bi-star-fill text-warning"></i>LCI e LCA</div>
+                                <i class="bi bi-star-fill text-warning"></i>LCI e LCA
+                            </div>
                             <div class="mb-3">
                                 <span class="display-4 fw-bold"> 98%</span>
                                 <span class="text-muted">/ do CDI.</span>
@@ -200,11 +214,13 @@
                             <ul class="list-unstyled mb-4">
                                 <li class="mb-2">
                                     <i class="bi bi-check text-primary"></i>
-                                    <strong>São investimentos muito populares na Renda Fixa, com boas rentabilidades no médio prazo.
-                                        </strong>
+                                    <strong>São investimentos muito populares na Renda Fixa, com boas rentabilidades no
+                                        médio prazo.
+                                    </strong>
                                 </li>
                                 <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i> Bom para quem está se planejando para o futuro
+                                    <i class="bi bi-check text-primary"></i> Bom para quem está se planejando para o
+                                    futuro
                                 </li>
                                 <li class="mb-2">
                                     <i class="bi bi-check text-primary"></i> São isentos de Imposto de Renda
@@ -219,16 +235,18 @@
     </section>
 
 
-    <section class "infoConta" id="66" style="display: none;">
+    <section class="infoConta" id="66" style="display: none;">
         <header class="bg-dark" style="height: 47rem">
             <div class="container px-5">
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-6">
                         <div class="text-center my-6">
-                            <img src="../../../../public/iconeedsvg.png" alt="..." style="width: 156px; height: 156px;" />
+                            <img src="../../../../public/iconeedsvg.png" alt="..."
+                                style="width: 156px; height: 156px;" />
 
                             <p id="account-infos" class="lead text-white-50 mb-4" style="font-size:1.9rem;"></p>
-                            <a class="btn btn-primary rounded-pill px-3 mb-3 mb-lg-0" href="#header1" onclick="toogleState('66')">Voltar para inicio</a>
+                            <a class="btn btn-primary rounded-pill px-3 mb-3 mb-lg-0" href="#header1"
+                                onclick="toogleState('66')">Voltar para inicio</a>
                         </div>
 
                     </div>
@@ -249,9 +267,11 @@
                     <div class="card mb-4">
                         <div class="card-body p-4">
                             <div class="d-flex">
-                                <div class="flex-shrink-0"><i class="bi bi-chat-right-quote-fill text-primary fs-1"></i></div>
+                                <div class="flex-shrink-0"><i class="bi bi-chat-right-quote-fill text-primary fs-1"></i>
+                                </div>
                                 <div class="ms-4">
-                                    <p class="mb-1">Com ED BANK consegui investir no meu negócio sem comprometer a renda, gerando valor.</p>
+                                    <p class="mb-1">Com ED BANK consegui investir no meu negócio sem comprometer a
+                                        renda, gerando valor.</p>
                                     <div class="small text-muted">- Ana, Manaus</div>
                                 </div>
                             </div>
@@ -261,7 +281,8 @@
                     <div class="card">
                         <div class="card-body p-4">
                             <div class="d-flex">
-                                <div class="flex-shrink-0"><i class="bi bi-chat-right-quote-fill text-primary fs-1"></i></div>
+                                <div class="flex-shrink-0"><i class="bi bi-chat-right-quote-fill text-primary fs-1"></i>
+                                </div>
                                 <div class="ms-4">
                                     <p class="mb-1">Simples e fácil de usar.</p>
                                     <div class="small text-muted">- Léo, Rio de Janeiro</div>
@@ -287,6 +308,30 @@
                 <span class="mx-1">&middot;</span>
                 <a class="text-white-50 " href="#!" style="text-decoration: none;">FAQ</a>
 
+            </div>
+        </div>
+        <!-- Modal HTML -->
+        <div id="myModal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Informe o intervalo de datas</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="d-inline-flex p-2 grid">
+                        <div class="form-outline form-white mb-4">
+                            <input placeholder="Select date" type="date" id="initialDate" class="form-control">
+                        </div>
+                        <p class="margin">até</p>
+                        <div class="form-outline form-white mb-4">
+                            <input placeholder="Select date" type="date" id="finalDate" class="form-control">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary" target="_blank" onclick="ExtractController.Extract()">Emitir extrato</button>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- Bootstrap core JS-->
