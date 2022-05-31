@@ -10,7 +10,9 @@ const BankStatementModel = {
             mode: "cors"
         }
 
-        return fetch(`URL`, options)
+        const accountId = atob(localStorage.getItem('userAccountId'))
+
+        return fetch(`${url}/account/${accountId}/bank-statements`, options)
             .then(response => {
                 return response.json()
             })

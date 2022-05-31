@@ -8,8 +8,9 @@ const BankStatementController = {
             finalDate: finalDate
         }
         validateBankStatement(bankStatement)
-        //generateBankStatement();
-        //const response = await BankStatementModel.BankStatement(bankStatement)
+        const response = await BankStatementModel.BankStatement(bankStatement)
+        generateBankStatement(response);
+        
 
         console.log(response)
     },
