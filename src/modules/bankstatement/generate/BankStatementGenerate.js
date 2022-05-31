@@ -1,4 +1,4 @@
-function generateExtract(){
+function generateBankStatement(BankStatement){
     var doc = new jsPDF()
     doc.setProperties({
         title: "Extrato"

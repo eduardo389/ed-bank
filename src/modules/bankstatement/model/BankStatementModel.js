@@ -1,7 +1,7 @@
 const url = config.edBankApi.url
 
-const ExtractModel = {
-    Extract: (extract) => {
+const BankStatementModel = {
+    BankStatement: (bankStatement) => {
         const options = {
             method: 'GET',
             headers: {

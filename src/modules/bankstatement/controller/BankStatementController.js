@@ -1,15 +1,15 @@
-const ExtractController = {
+const BankStatementController = {
 
-    Extract: async() => {
+    BankStatement: async() => {
         const initialDate = document.getElementById("initialDate").value;
         const finalDate = document.getElementById("finalDate").value;
-        const extract = {
+        const bankStatement = {
             initialDate: initialDate,
             finalDate: finalDate
         }
-        validateExtract(extract)
-        generateExtract();
-        //const response = await ExtractModel.Extract(extract)
+        validateBankStatement(bankStatement)
+        //generateBankStatement();
+        //const response = await BankStatementModel.BankStatement(bankStatement)
 
         console.log(response)
     },
