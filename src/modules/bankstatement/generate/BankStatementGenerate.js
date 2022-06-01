@@ -42,7 +42,7 @@ function generateBankStatement(period, bankStatements) {
 
     const header = `
                                                 ED Bank
-                        Extrato Bancário - ${period.initialDate} - ${period.finalDate}
+                        Extrato Bancário - ${period.initialDate.split('T')[0]} - ${period.finalDate.split('T')[0]}
                     Nome: ${userName}       Conta: ${userNumberAccount}        
 
         -----------------------------------------------------------------------------------------------    
