@@ -12,11 +12,15 @@ const UserModel = {
         }
 
         return fetch(`${config.edBankApi.url}/user`, options)
-            .then(response => {
+            .then(async response => {
+                if (response.status !== 201) {
+                    const body = await response.json()
+                    return Promise.reject({ status: response.status, error: body })
+                }
                 return response.json()
             })
             .catch(error => {
-                return error
+                return Promise.reject(error)
             })
     },
     get: () => {
@@ -31,11 +35,15 @@ const UserModel = {
         }
 
         return fetch(`${config.edBankApi.url}/user`, options)
-            .then(response => {
+            .then(async response => {
+                if (response.status !== 200) {
+                    const body = await response.json()
+                    return Promise.reject({ status: response.status, error: body })
+                }
                 return response.json()
             })
             .catch(error => {
-                return error
+                return Promise.reject(error)
             })
 
     }
