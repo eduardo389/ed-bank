@@ -4,8 +4,8 @@ const BankStatementController = {
         const initialDate = document.getElementById("initialDate").value;
         const finalDate = document.getElementById("finalDate").value;
         const params = {
-            initialDate: initialDate,
-            finalDate: finalDate
+            initialDate: new Date(initialDate).toISOString(),
+            finalDate: new Date(finalDate).toISOString()
         }
         validateBankStatement(params)
         const response = await BankStatementModel.BankStatement(params)
