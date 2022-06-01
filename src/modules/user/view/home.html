@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script type="text/javascript" src="../../../common/config/config.js"></script>
     <script type="text/javascript" src="../../bankstatement/validator/BankStatementValidator.js"></script>
     <script type="text/javascript" src="../../bankstatement/controller/BankStatementController.js"></script>
@@ -77,7 +78,7 @@
     <section class="py-5 border-bottom" id="features">
         <div class="container px-5 my-5">
             <div class="row gx-5">
-                <div class="col-lg-4 mb-5 mb-lg-0">
+                <div class="col-lg-3 mb-5 mb-lg-0">
                     <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi-wallet2 "></i>
                     </div>
                     <h2 class="h4 fw-bolder">Extrato</h2>
@@ -87,7 +88,7 @@
                         <i class="bi bi-arrow-right "></i>
                     </a>
                 </div>
-                <div class="col-lg-4 mb-5 mb-lg-0">
+                <div class="col-lg-3 mb-5 mb-lg-0">
                     <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-safe"></i>
                     </div>
                     <h2 class="h4 fw-bolder">Depósito</h2>
@@ -97,7 +98,7 @@
                         <i class="bi bi-arrow-right"></i>
                     </a>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-3">
                     <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi-cash-stack"></i>
                     </div>
                     <h2 class="h4 fw-bolder">Transferência</h2>
@@ -107,8 +108,8 @@
                         <i class="bi bi-arrow-right"></i>
                     </a>
                 </div>
-                <div class="col-lg-4 mb-5 mb-lg-0">
-                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi-wallet2 "></i>
+                <div class="col-lg-3 mb-5 mb-lg-0">
+                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-graph-up-arrow"></i>
                     </div>
                     <h2 class="h4 fw-bolder">Investimento</h2>
                     <p>Veja a movimentação financeira de sua conta.</p>
@@ -334,30 +335,79 @@
             </div>
         </div>
 
-        <div id="idInvestment" class="modal fade">
+        <div id="idInvestment" class="modal fade" >
             <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Carteiras de investimento</h5>
+                <div class="modal-content" >
+                    <div class="modal-header" style="background: -webkit-linear-gradient(#2937f0, #9f1ae2)">
+                        <h5 class="modal-title" style="color: white"><i class="bi bi-wallet2"></i> Carteiras de investimento ED BANK </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
                     <nav>
+
+                        <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+                        
+                        <script>
+                            var xValues = ["CDB", "LCA", "Tesouro Direto"];
+                            var yValues = [55, 49, 44];
+                            var barColors = [
+                              "#b91d47",
+                              "#2b5797",
+                              "#1e7145"
+                            ];
+                            
+                            new Chart("myChart", {
+                              type: "pie",
+                              data: {
+                                labels: xValues,
+                                datasets: [{
+                                  backgroundColor: barColors,
+                                  data: yValues
+                                }]
+                              },
+                              options: {
+                                title: {
+                                  display: true,
+                                  text: "Investimentos"
+                                }
+                              }
+                            });
+                            </script>
+                        <h5> <br><p id="valortotalaplicado"></p><br> </h5>
                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Carteira 1</button>
-                            <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Carteira 2</button>
-                            <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Carteira 3</button>
+                          <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true"> CDB </button>
+                          <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false"> LCA </button>
+                          <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Tesouro Direto</button>
                         </div>
-                    </nav>
-                    <div class="tab-content" id="nav-tabContent">
-                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">aaa</div>
-                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">bbb</div>
-                        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">ccc</div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-primary" target="_blank" onclick="">Efetuar Saque</button>
-                        <button type="button" class="btn btn-primary" target="_blank" onclick="">Efetuar Deposito</button>
-                    </div>
+                      </nav>
+                      <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
+                           <br><p id="valorescdb">Valor Aplicado - R$1000,00<br><br>Valor Liquido - R$1100,00 <br><br></p>
+                           
+                            <button type="button" class="btn btn-primary" target="_blank" onclick="">Relatório</button>
+                            <button type="button" class="btn btn-primary" target="_blank" onclick="">Investir</button>
+                            <button type="button" class="btn btn-primary" target="_blank" onclick="">Resgatar</button>
+                                          
+                        </p></div>
+                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
+                            <br><p id="valoreslca">Valor Aplicado - R$820,00<br><br>Valor Liquido - R$950,00 <br><br></p>
+                           
+                            <button type="button" class="btn btn-primary" target="_blank" onclick="">Relatório</button>
+                            <button type="button" class="btn btn-primary" target="_blank" onclick="">Investir</button>
+                            <button type="button" class="btn btn-primary" target="_blank" onclick="">Resgatar</button>
+                                          
+                        </p>
+                        </div>
+                        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
+                            <br>Valor Aplicado - R$400,00<br><br>Valor Liquido - R$530,00 <br><br>
+                           
+                            <button type="button" class="btn btn-primary" target="_blank" onclick="">Relatório</button>
+                            <button type="button" class="btn btn-primary" target="_blank" onclick="">Investir</button>
+                            <button type="button" class="btn btn-primary" target="_blank" onclick="">Resgatar</button>
+                                          
+                        </p>
+                        </div>
+                      </div>
+                   
                 </div>
             </div>
         </div>
@@ -372,6 +422,9 @@
             document.getElementById('owner-account-name').innerHTML = `Olá, ${atob(localStorage.getItem('userName'))}`
             document.getElementById('oculta').innerHTML = `${atob(localStorage.getItem('userAccountBalance'))}`
             document.getElementById('account-infos').innerHTML = `<br>Número da conta - ${atob(localStorage.getItem('userNumberAccount'))} <br>Nome - ${atob(localStorage.getItem('userName'))} <br> E-mail - ${atob(localStorage.getItem('userEmail'))}`
+            document.getElementById('valortotalaplicado').innerHTML = `${atob(localStorage.getItem('userAccountBalance'))}`
+           
+        
         </script>
 </body>
 
