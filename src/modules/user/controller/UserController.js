@@ -13,7 +13,7 @@ const UserController = {
             password,
             phoneNumber
         }
-        validateUserRegister(user)
+        if (!validateUserRegister(user)) return
         const response = await UserModel.create(user)
 
         if (!response.id) {
