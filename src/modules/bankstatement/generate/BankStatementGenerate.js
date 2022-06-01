@@ -16,7 +16,23 @@ const formatter = new Intl.NumberFormat('pt-BR', {
 });
 
 function generateBankStatement(period, bankStatements) {
-    var doc = new jsPDF()
+    var doc = new jsPDF('p', 'pt', 'a4')
+
+    var pageWidth = 595;
+    var pageHeight = 842;
+    var y = 500;
+    var pageMargin = 10;
+
+    pageWidth -= pageMargin * 2;
+    pageHeight -= pageMargin * 2;
+
+    var cellMargin = 5;
+    var cellWidth = 250;
+    var cellHeight = 100;
+
+    var startX = pageMargin;
+    var startY = pageMargin;
+
     doc.setProperties({
         title: `Extrato Bancário`
     });
@@ -31,24 +47,27 @@ function generateBankStatement(period, bankStatements) {
 
         -----------------------------------------------------------------------------------------------    
     `
+    doc.text(header, startX, startY)
 
-    const body = bankStatements.reduce((acc, bankStatement) => {
-        acc += `
-            Operação de: ${operationTypeDictionary[bankStatement.bankTransactionType]}
-            Data da operação: ${new Date(bankStatement.createdOn).toLocaleString()}  
-            Valor: ${formatter.format(bankStatement.value)}
-            Observações: ${obsDictionary[bankStatement.obs.replace(' ', '_')]}
+    startY += cellHeight
+
+    bankStatements.forEach((bankStatement) => {
+        console.log({ startY, pageHeight })
+        if (startY + cellHeight >= pageHeight) {
+            doc.addPage();
+            startY = pageMargin
+        }
+
+        const statement = `
+        Operação de: ${operationTypeDictionary[bankStatement.bankTransactionType]}
+        Data da operação: ${new Date(bankStatement.createdOn).toLocaleString()}  
+        Valor: ${formatter.format(bankStatement.value)}
+        Observações: ${obsDictionary[bankStatement.obs.replace(' ', '_')]}
         -----------------------------------------------------------------------------------------------
         `
-        return acc
-    }, '')
+        doc.text(statement, startX, startY)
+        startY += cellHeight
+    })
 
-
-    const extract = `
-        ${header}
-        ${body}
-    `
-
-    doc.text(extract, 10, 10)
     window.open(URL.createObjectURL(doc.output("blob")))
 }
