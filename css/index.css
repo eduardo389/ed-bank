@@ -3763,10 +3763,6 @@ fieldset:disabled .btn {
     opacity: 0;
 }
 
-.collapse:not(.show) {
-    display: none;
-}
-
 .collapsing {
     height: 0;
     overflow: hidden;
@@ -4402,8 +4398,10 @@ fieldset:disabled .btn {
 }
 
 .navbar-collapse {
+    display: flex;
     flex-basis: 100%;
     flex-grow: 1;
+    justify-content: center;
     align-items: center;
 }
 
@@ -4467,14 +4465,13 @@ fieldset:disabled .btn {
         overflow: visible;
     }
     .navbar-expand-sm .navbar-collapse {
-        display: flex !important;
-        flex-basis: auto;
+        display: none !important;
     }
     .navbar-expand-sm .navbar-toggler {
-        display: none;
+        display: none !important;
     }
     .navbar-expand-sm .offcanvas-header {
-        display: none;
+        display: none !important;
     }
     .navbar-expand-sm .offcanvas {
         position: inherit;
@@ -4525,10 +4522,10 @@ fieldset:disabled .btn {
         flex-basis: auto;
     }
     .navbar-expand-md .navbar-toggler {
-        display: none;
+        display: none !important;
     }
     .navbar-expand-md .offcanvas-header {
-        display: none;
+        display: none !important;
     }
     .navbar-expand-md .offcanvas {
         position: inherit;
@@ -4579,10 +4576,12 @@ fieldset:disabled .btn {
         flex-basis: auto;
     }
     .navbar-expand-lg .navbar-toggler {
-        display: none;
+        display: flex !important;
+        flex-basis: auto;
     }
     .navbar-expand-lg .offcanvas-header {
-        display: none;
+        display: flex !important;
+        flex-basis: auto;
     }
     .navbar-expand-lg .offcanvas {
         position: inherit;
@@ -4633,10 +4632,12 @@ fieldset:disabled .btn {
         flex-basis: auto;
     }
     .navbar-expand-xl .navbar-toggler {
-        display: none;
+        display: flex !important;
+        flex-basis: auto;
     }
     .navbar-expand-xl .offcanvas-header {
-        display: none;
+        display: flex !important;
+        flex-basis: auto;
     }
     .navbar-expand-xl .offcanvas {
         position: inherit;
@@ -4687,10 +4688,12 @@ fieldset:disabled .btn {
         flex-basis: auto;
     }
     .navbar-expand-xxl .navbar-toggler {
-        display: none;
+        display: flex !important;
+        flex-basis: auto;
     }
     .navbar-expand-xxl .offcanvas-header {
-        display: none;
+        display: flex !important;
+        flex-basis: auto;
     }
     .navbar-expand-xxl .offcanvas {
         position: inherit;
@@ -4743,14 +4746,6 @@ fieldset:disabled .btn {
 .navbar-expand .navbar-collapse {
     display: flex !important;
     flex-basis: auto;
-}
-
-.navbar-expand .navbar-toggler {
-    display: none;
-}
-
-.navbar-expand .offcanvas-header {
-    display: none;
 }
 
 .navbar-expand .offcanvas {
@@ -7999,10 +7994,6 @@ fieldset:disabled .btn {
 
 .ms-5 {
     margin-left: 3rem !important;
-}
-
-.ms-auto {
-    margin-left: auto !important;
 }
 
 .p-0 {

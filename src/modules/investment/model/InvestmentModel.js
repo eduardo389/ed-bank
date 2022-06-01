@@ -2,12 +2,18 @@ const url = config.edBankApi.url
 
 const InvestmentModel = {
     getInvestments: () => {
+        const token = localStorage.getItem('token-jwt')
+
+        if (!token) {
+            return
+        }
+
         const options = {
             method: 'GET',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${atob(localStorage.getItem('token-jwt'))}`
+                'Authorization': `Bearer ${atob(token)}`
             },
             mode: "cors"
         }
@@ -29,12 +35,18 @@ const InvestmentModel = {
     },
 
     invest: (params) => {
+        const token = localStorage.getItem('token-jwt')
+
+        if (!token) {
+            return
+        }
+
         const options = {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${atob(localStorage.getItem('token-jwt'))}`
+                'Authorization': `Bearer ${atob(token)}`
             },
             body: JSON.stringify(params),
             mode: "cors"

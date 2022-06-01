@@ -36,6 +36,7 @@ const UserController = {
                 }
             } else if (error.status === 403) {
                 alert(`Seu token de acesso expirou. Por favor, faça login novamente.`)
+                localStorage.clear()
                 window.location.pathname = "src/modules/login/view/login.html"
             } else if (error.status === 404) {
                 if (error.error.message === "ACCOUNT_NOT_FOUND") {

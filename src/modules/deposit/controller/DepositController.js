@@ -18,6 +18,7 @@ const DepositController = {
         } catch (error) {
             if (error.status === 403) {
                 alert(`Seu token de acesso expirou. Por favor, faça login novamente.`)
+                localStorage.clear()
                 window.location.pathname = "src/modules/login/view/login.html"
             } else {
                 alert('Ops! Algum erro inesperado aconteceu! Tente novamente mais tarde.')
