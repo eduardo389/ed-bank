@@ -15,8 +15,13 @@ const UserController = {
         }
         validateUserRegister(user)
         const response = await UserModel.create(user)
-        console.log(response)
-        alert("Conta criada com sucesso! Faça login.")
+
+        if (!response.id) {
+            alert(`Ocorreu alguma falha ao criar sua conta, por favor tente mais tarde ou entre em contato com a equipe de atendimento!`)
+            return
+        }
+
+        alert(`Conta criada com sucesso! Seja bem vindo ${response.name}!`)
         window.location.pathname = "src/modules/login/view/login.html"
         return response
     },
