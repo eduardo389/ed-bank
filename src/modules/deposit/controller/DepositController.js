@@ -5,7 +5,7 @@ const DepositController = {
         const deposit = {
             value: Number(value)
         }
-        validateDeposit(deposit)
+        if (!validateDeposit(deposit)) return
         const response = await DepositModel.Deposit(deposit)
 
         localStorage.setItem("userAccountBalance", btoa(response.balance))
