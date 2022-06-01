@@ -5,14 +5,18 @@ const BankStatementModel = {
         const options = {
             method: 'GET',
             headers: {
-                'Content-Type': 'application/json'
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${atob(localStorage.getItem('token-jwt'))}`
             },
             mode: "cors"
         }
 
+        let queryString = `?initialDate=${bankStatement.initialDate}&finalDate=${bankStatement.finalDate}`
+
         const accountId = atob(localStorage.getItem('userAccountId'))
 
-        return fetch(`${url}/account/${accountId}/bank-statements`, options)
+        return fetch(`${url}/account/${accountId}/bank-statements${queryString}`, options)
             .then(response => {
                 return response.json()
             })

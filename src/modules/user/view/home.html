@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
+    <script type="text/javascript" src="../../../common/config/config.js"></script>
     <script type="text/javascript" src="../../bankstatement/validator/BankStatementValidator.js"></script>
     <script type="text/javascript" src="../../bankstatement/controller/BankStatementController.js"></script>
     <script type="text/javascript" src="../../bankstatement/generate/BankStatementGenerate.js"></script>
@@ -15,7 +16,7 @@
     <link rel="icon" type="image/x-icon" href="../../../../public/favicon.ico" />
     <link href="../../../style/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-    
+
     <title>BANK - Investimentos & Financiamento</title>
     <script>
         function toogleState(divid) {
@@ -30,13 +31,10 @@
 
 <body>
     <!-- Responsive navbar-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm"
-        style="background: -webkit-linear-gradient(#2937f0, #9f1ae2)">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm" style="background: -webkit-linear-gradient(#2937f0, #9f1ae2)">
         <div class="container px-5">
             <a class="navbar-brand" href="#!">ED BANK - Investimentos & Financiamento</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse dropdown show" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
@@ -60,15 +58,12 @@
                 <div class="col-lg-6">
                     <div id="account-info" class="text-center my-5">
                         <h1 id="owner-account-name" class="display-4 fw-bolder text-white mb-1"></h1><br>
-                        <p id="account-balance" class="lead text-white-50 mb-4" style="font-size:1.9rem;"><br>Saldo
-                            disponível: R$<span id='oculta' style="display: none;">info</span><button type="button"
-                                onclick="toogleState('oculta')" style="background-color: #212529; border: none;"><i
+                        <p id="account-balance" class="lead text-white-50 mb-4" style="font-size:1.9rem;"><br>Saldo disponível: R$<span id='oculta' style="display: none;">info</span><button type="button" onclick="toogleState('oculta')" style="background-color: #212529; border: none;"><i
                                     class="bi bi-eye " style="color: white;"></i></button></i>
                         </p>
 
                         <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
-                            <a class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0" onclick="toogleState('66')"
-                                href="#66">Ver informações da conta</a>
+                            <a class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0" onclick="toogleState('66')" href="#66">Ver informações da conta</a>
 
                         </div>
 
@@ -196,13 +191,10 @@
                                     </strong>
                                 </li>
                                 <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i> Tem cobrança de Imposto de Renda – segue a
-                                    tabela regressiva da renda fixa, conforme o tempo de aplicação, de 22,5% a 15%,
-                                    podendo ainda ser mais lucrativo que o LCI ou LCA
+                                    <i class="bi bi-check text-primary"></i> Tem cobrança de Imposto de Renda – segue a tabela regressiva da renda fixa, conforme o tempo de aplicação, de 22,5% a 15%, podendo ainda ser mais lucrativo que o LCI ou LCA
                                 </li>
                                 <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i> São cobertos pelo Fundo Garantidor de
-                                    Créditos - FGC
+                                    <i class="bi bi-check text-primary"></i> São cobertos pelo Fundo Garantidor de Créditos - FGC
                                 </li>
 
 
@@ -230,8 +222,7 @@
                                     </strong>
                                 </li>
                                 <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i> Bom para quem está se planejando para o
-                                    futuro
+                                    <i class="bi bi-check text-primary"></i> Bom para quem está se planejando para o futuro
                                 </li>
                                 <li class="mb-2">
                                     <i class="bi bi-check text-primary"></i> São isentos de Imposto de Renda
@@ -252,12 +243,10 @@
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-6">
                         <div class="text-center my-6">
-                            <img src="../../../../public/iconeedsvg.png" alt="..."
-                                style="width: 156px; height: 156px;" />
+                            <img src="../../../../public/iconeedsvg.png" alt="..." style="width: 156px; height: 156px;" />
 
                             <p id="account-infos" class="lead text-white-50 mb-4" style="font-size:1.9rem;"></p>
-                            <a class="btn btn-primary rounded-pill px-3 mb-3 mb-lg-0" href="#header1"
-                                onclick="toogleState('66')">Voltar para inicio</a>
+                            <a class="btn btn-primary rounded-pill px-3 mb-3 mb-lg-0" href="#header1" onclick="toogleState('66')">Voltar para inicio</a>
                         </div>
 
                     </div>
@@ -281,8 +270,7 @@
                                 <div class="flex-shrink-0"><i class="bi bi-chat-right-quote-fill text-primary fs-1"></i>
                                 </div>
                                 <div class="ms-4">
-                                    <p class="mb-1">Com ED BANK consegui investir no meu negócio sem comprometer a
-                                        renda, gerando valor.</p>
+                                    <p class="mb-1">Com ED BANK consegui investir no meu negócio sem comprometer a renda, gerando valor.</p>
                                     <div class="small text-muted">- Ana, Manaus</div>
                                 </div>
                             </div>
@@ -355,16 +343,16 @@
                     </div>
                     <nav>
                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                          <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Carteira 1</button>
-                          <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Carteira 2</button>
-                          <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Carteira 3</button>
+                            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Carteira 1</button>
+                            <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Carteira 2</button>
+                            <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Carteira 3</button>
                         </div>
-                      </nav>
-                      <div class="tab-content" id="nav-tabContent">
+                    </nav>
+                    <div class="tab-content" id="nav-tabContent">
                         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">aaa</div>
                         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">bbb</div>
                         <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">ccc</div>
-                      </div>
+                    </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                         <button type="button" class="btn btn-primary" target="_blank" onclick="">Efetuar Saque</button>

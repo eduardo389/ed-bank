@@ -3,14 +3,14 @@ const BankStatementController = {
     BankStatement: async() => {
         const initialDate = document.getElementById("initialDate").value;
         const finalDate = document.getElementById("finalDate").value;
-        const bankStatement = {
+        const params = {
             initialDate: initialDate,
             finalDate: finalDate
         }
-        validateBankStatement(bankStatement)
-        const response = await BankStatementModel.BankStatement(bankStatement)
-        generateBankStatement(response);
-        
+        validateBankStatement(params)
+        const response = await BankStatementModel.BankStatement(params)
+        generateBankStatement(params, response);
+
 
         console.log(response)
     },
