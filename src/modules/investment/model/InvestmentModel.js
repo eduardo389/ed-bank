@@ -44,7 +44,7 @@ const InvestmentModel = {
         const investmentId = 1
 
         return fetch(`${url}/account/${accountId}/invest/${investmentId}`, options)
-            .then(response => {
+            .then(async response => {
                 if (response.status !== 201) {
                     const body = await response.json()
                     return Promise.reject({ status: response.status, error: body })
