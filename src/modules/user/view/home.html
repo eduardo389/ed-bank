@@ -59,7 +59,7 @@
                 <div class="col-lg-6">
                     <div id="account-info" class="text-center my-5">
                         <h1 id="owner-account-name" class="display-4 fw-bolder text-white mb-1"></h1><br>
-                        <p id="account-balance" class="lead text-white-50 mb-4" style="font-size:1.9rem;"><br>Saldo disponível: R$<span id='oculta' style="display: none;">info</span><button type="button" onclick="toogleState('oculta')" style="background-color: #212529; border: none;"><i
+                        <p id="account-balance" class="lead text-white-50 mb-4" style="font-size:1.9rem;"><br>Saldo disponível: <span id='oculta' style="display: none;">info</span><button type="button" onclick="toogleState('oculta')" style="background-color: #212529; border: none;"><i
                                     class="bi bi-eye " style="color: white;"></i></button></i>
                         </p>
 
@@ -335,9 +335,9 @@
             </div>
         </div>
 
-        <div id="idInvestment" class="modal fade" >
+        <div id="idInvestment" class="modal fade">
             <div class="modal-dialog">
-                <div class="modal-content" >
+                <div class="modal-content">
                     <div class="modal-header" style="background: -webkit-linear-gradient(#2937f0, #9f1ae2)">
                         <h5 class="modal-title" style="color: white"><i class="bi bi-wallet2"></i> Carteiras de investimento ED BANK </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
@@ -345,69 +345,73 @@
                     <nav>
 
                         <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
-                        
+
                         <script>
                             var xValues = ["CDB", "LCA", "Tesouro Direto"];
                             var yValues = [55, 49, 44];
                             var barColors = [
-                              "#b91d47",
-                              "#2b5797",
-                              "#1e7145"
+                                "#b91d47",
+                                "#2b5797",
+                                "#1e7145"
                             ];
-                            
+
                             new Chart("myChart", {
-                              type: "pie",
-                              data: {
-                                labels: xValues,
-                                datasets: [{
-                                  backgroundColor: barColors,
-                                  data: yValues
-                                }]
-                              },
-                              options: {
-                                title: {
-                                  display: true,
-                                  text: "Investimentos"
+                                type: "pie",
+                                data: {
+                                    labels: xValues,
+                                    datasets: [{
+                                        backgroundColor: barColors,
+                                        data: yValues
+                                    }]
+                                },
+                                options: {
+                                    title: {
+                                        display: true,
+                                        text: "Investimentos"
+                                    }
                                 }
-                              }
                             });
-                            </script>
-                        <h5> <br><p id="valortotalaplicado"></p><br> </h5>
+                        </script>
+                        <h5> <br>
+                            <p id="valortotalaplicado"></p><br> </h5>
                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                          <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true"> CDB </button>
-                          <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false"> LCA </button>
-                          <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Tesouro Direto</button>
+                            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true"> CDB </button>
+                            <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false"> LCA </button>
+                            <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Tesouro Direto</button>
                         </div>
-                      </nav>
-                      <div class="tab-content" id="nav-tabContent">
+                    </nav>
+                    <div class="tab-content" id="nav-tabContent">
                         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
-                           <br><p id="valorescdb">Valor Aplicado - R$1000,00<br><br>Valor Liquido - R$1100,00 <br><br></p>
-                           
+                            <br>
+                            <p id="valorescdb">Valor Aplicado - R$1000,00<br><br>Valor Liquido - R$1100,00 <br><br></p>
+
                             <button type="button" class="btn btn-primary" target="_blank" onclick="">Relatório</button>
                             <button type="button" class="btn btn-primary" target="_blank" onclick="">Investir</button>
                             <button type="button" class="btn btn-primary" target="_blank" onclick="">Resgatar</button>
-                                          
-                        </p></div>
+
+                            </p>
+                        </div>
                         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
-                            <br><p id="valoreslca">Valor Aplicado - R$820,00<br><br>Valor Liquido - R$950,00 <br><br></p>
-                           
+                            <br>
+                            <p id="valoreslca">Valor Aplicado - R$820,00<br><br>Valor Liquido - R$950,00 <br><br></p>
+
                             <button type="button" class="btn btn-primary" target="_blank" onclick="">Relatório</button>
                             <button type="button" class="btn btn-primary" target="_blank" onclick="">Investir</button>
                             <button type="button" class="btn btn-primary" target="_blank" onclick="">Resgatar</button>
-                                          
-                        </p>
+
+                            </p>
                         </div>
                         <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
                             <br>Valor Aplicado - R$400,00<br><br>Valor Liquido - R$530,00 <br><br>
-                           
+
                             <button type="button" class="btn btn-primary" target="_blank" onclick="">Relatório</button>
                             <button type="button" class="btn btn-primary" target="_blank" onclick="">Investir</button>
                             <button type="button" class="btn btn-primary" target="_blank" onclick="">Resgatar</button>
-                                          
-                        </p>
+
+                            </p>
                         </div>
-                      </div>
-                   
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -419,12 +423,11 @@
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
         <script>
+            const totalValue = atob(localStorage.getItem('userAccountBalance'))
             document.getElementById('owner-account-name').innerHTML = `Olá, ${atob(localStorage.getItem('userName'))}`
-            document.getElementById('oculta').innerHTML = `${atob(localStorage.getItem('userAccountBalance'))}`
+            document.getElementById('oculta').innerHTML = `${formatter.format(totalValue)}`
             document.getElementById('account-infos').innerHTML = `<br>Número da conta - ${atob(localStorage.getItem('userNumberAccount'))} <br>Nome - ${atob(localStorage.getItem('userName'))} <br> E-mail - ${atob(localStorage.getItem('userEmail'))}`
-            document.getElementById('valortotalaplicado').innerHTML = `${atob(localStorage.getItem('userAccountBalance'))}`
-           
-        
+            document.getElementById('valortotalaplicado').innerHTML = `${formatter.format(totalValue)}`
         </script>
 </body>
 
