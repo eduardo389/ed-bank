@@ -8,8 +8,8 @@ const TransferController = {
             value: Number(value)
         }
         validateTransfer(transfer)
+
         const response = await TransferModel.Transfer(transfer)
-        console.log(response)
 
         const user = await UserModel.get()
 

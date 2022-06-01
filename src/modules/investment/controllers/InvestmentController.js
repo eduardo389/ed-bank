@@ -1,23 +1,28 @@
 const UserController = {
 
-    create: async() => {
-        const name = document.getElementById("nome").value;
-        const email = document.getElementById("email").value;
-        const password = document.getElementById("senha").value;
-        const cpf = document.getElementById("cpf").value;
-        const phoneNumber = document.getElementById("telefone").value;
-        const user = {
-            name,
-            cpf,
-            email,
-            password,
-            phoneNumber
-        }
-        validateUserRegister(user)
-        const response = await InvestmentModel.create()
-        console.log(response)
+    getInvestments: async() => {
+        const response = await InvestmentModel.getInvestments()
         return response
     },
 
-    update: async() => {}
+    invest: async() => {
+        const desc = document.getElementById("investment-desc").value;
+        const value = document.getElementById("investment-value").value;
+
+        const params = {
+            desc,
+            value: Number(value)
+        }
+
+        validateInvestment(params)
+
+        const response = await InvestmentModel.invest(params)
+
+        if (response) {
+            alert(`Valor de R$ ${value} investido com sucesso!`)
+            window.location.pathname = "src/modules/user/view/home.html"
+        }
+
+        return response
+    }
 }

@@ -1,5 +1,3 @@
-const url = config.edBankApi.url
-
 const BankStatementModel = {
     BankStatement: (bankStatement) => {
         const options = {
