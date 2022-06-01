@@ -16,7 +16,7 @@ const DepositModel = {
         const accountId = atob(localStorage.getItem('userAccountId'))
 
         return fetch(`${url}/account/${accountId}/deposit`, options)
-            .then(response => {
+            .then(async response => {
                 if (response.status !== 200) {
                     const body = await response.json()
                     return Promise.reject({ status: response.status, error: body })
