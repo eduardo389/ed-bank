@@ -16,11 +16,15 @@ const TransferModel = {
         const accountId = atob(localStorage.getItem('userAccountId'))
 
         return fetch(`${url}/account/${accountId}/transfer`, options)
-            .then(response => {
+            .then(async response => {
+                if (response.status !== 201) {
+                    const body = await response.json()
+                    return Promise.reject({ status: response.status, error: body })
+                }
                 return response.json()
             })
             .catch(error => {
-                return error
+                return Promise.reject(error)
             })
 
     }

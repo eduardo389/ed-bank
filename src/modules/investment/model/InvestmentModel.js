@@ -16,10 +16,14 @@ const InvestmentModel = {
 
         return fetch(`${url}/account/${accountId}/investments`, options)
             .then(response => {
+                if (response.status !== 200) {
+                    const body = await response.json()
+                    return Promise.reject({ status: response.status, error: body })
+                }
                 return response.json()
             })
             .catch(error => {
-                return error
+                return Promise.reject(error)
             })
 
     },
@@ -41,10 +45,14 @@ const InvestmentModel = {
 
         return fetch(`${url}/account/${accountId}/invest/${investmentId}`, options)
             .then(response => {
+                if (response.status !== 201) {
+                    const body = await response.json()
+                    return Promise.reject({ status: response.status, error: body })
+                }
                 return response.json()
             })
             .catch(error => {
-                return error
+                return Promise.reject(error)
             })
 
     }
