@@ -4,8 +4,8 @@ const operationTypeDictionary = {
 }
 
 const obsDictionary = {
-    DEPOSIT: "Operação de Depósito",
-    TRANSFER: "Operação de Transferência",
+    DEPOSIT: "Depósito",
+    TRANSFER: "Transferência",
     INVESTMENT: "Investimento",
     INVESTMENT_RECLAIM: "Resgate de Investimento",
 }
