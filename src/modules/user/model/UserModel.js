@@ -45,6 +45,12 @@ const UserModel = {
             .catch(error => {
                 return Promise.reject(error)
             })
-
+    },
+    updateUserInfo: async(user) => {
+        User.setName(user.name)
+        User.setAccountId(user.accounts[0].id)
+        User.setAccountNumber(user.accounts[0].number)
+        User.setBalance(user.accounts[0].balance)
+        User.setEmail(user.email)
     }
 }

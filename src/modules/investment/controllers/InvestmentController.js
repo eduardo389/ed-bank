@@ -1,4 +1,4 @@
-const UserController = {
+const InvestmentController = {
 
     getInvestments: async() => {
         try {

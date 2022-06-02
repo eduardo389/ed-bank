@@ -2805,12 +2805,14 @@ textarea.form-control-lg {
     align-items: stretch;
     width: 100%;
 }
-.grid{
+
+.grid {
     display: grid;
     grid-column-gap: 10px;
     margin: auto;
 }
-.margin{
+
+.margin {
     margin-top: 6px;
 }
 
@@ -6195,7 +6197,7 @@ fieldset:disabled .btn {
 
 @media (min-width: 576px) {
     .modal-dialog {
-        max-width: 500px;
+        max-width: 550px;
         margin: 1.75rem auto;
     }
     .modal-dialog-scrollable {
