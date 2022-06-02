@@ -25,8 +25,10 @@ const LoginController = {
             return response
         } catch (error) {
             if (error.status === 400) {
-                if (error.error.message === "CPF_ALREADY_EXISTS") {
-                    alert(`CPF já cadastrado.`)
+                if (error.error.message === "USER_NOT_FOUND") {
+                    alert(`Usuário não cadastrado.`)
+                } else if (error.error.message === "INVALID_PASSWORD") {
+                    alert(`Senha inválida.`)
                 }
             } else {
                 alert('Ops! Algum erro inesperado aconteceu! Tente novamente mais tarde.')
